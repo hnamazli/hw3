@@ -1,5 +1,5 @@
 describe('Sum', () => {
-    it('a = 5, b = 2', () => {
+    it('Return 7', () => {
         assert .equal(getSum(5, 2), 7);
     });
 })
