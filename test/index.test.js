@@ -353,16 +353,6 @@ describe('getIsPrime', () => {
     });
 });
 
-/* describe('getSquareRoot', () => {
-    it('should be return ', () => {
-        const num = 25;
-        const expected = 5;
-        const actual = getSquareRoot(num);
-
-        assert.deepEqual(actual, expected);
-    });
-}); */
-
 describe('getFactorial', () => {
     it('should be return 120 (5)', () => {
         const num = 5;
@@ -452,6 +442,174 @@ describe('getMinIndex', () => {
         const arr = undefined;
         const expected = undefined;
         const actual = getMinIndex(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getOddSum', () => {
+    it('should be return 14 ([5, 9, 54, 2])', () => {
+        const arr = [5, 9, 54, 2];
+        const expected = 14;
+        const actual = getOddSum(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 ([8, 12, 54, 2])', () => {
+        const arr = [8, 12, 54, 2];
+        const expected = 0;
+        const actual = getOddSum(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 7 ([7, 12, 24, 2])', () => {
+        const arr = [7, 12, 24, 2];
+        const expected = 7;
+        const actual = getOddSum(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return undefined (undefined)', () => {
+        const arr = undefined;
+        const expected = undefined;
+        const actual = getOddSum(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getRevArr', () => {
+    it('should be return [3, 17, 80, 40, 15, 5] ([5, 15, 40, 80, 17, 3])', () => {
+        const arr = [5, 15, 40, 80, 17, 3];
+        const expected = [3, 17, 80, 40, 15, 5];
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return [3, 17] ([17, 3])', () => {
+        const arr = [17, 3];
+        const expected = [3, 17];
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return [17] ([17])', () => {
+        const arr = [17];
+        const expected = [17];
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty array ([])', () => {
+        const arr = [];
+        const expected = [];
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (undefined)', () => {
+        const arr = undefined;
+        const expected = undefined;
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (null)', () => {
+        const arr = null;
+        const expected = undefined;
+        const actual = getRevArr(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getHalfRev', () => {
+    it('should be return [3, 4, 1, 2] ([1, 2, 3, 4])', () => {
+        const arr = [1, 2, 3, 4];
+        const expected = [3, 4, 1, 2];
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+   it('should be return Array length is negative ([1, 2, 3, 4, 5])', () => {
+        const arr = [1, 2, 3, 4, 5];
+        const expected = 'Array length is negative';
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Array length is negative ([17])', () => {
+        const arr = [17];
+        const expected = 'Array length is negative';
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty array ([])', () => {
+        const arr = [];
+        const expected = [];
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (undefined)', () => {
+        const arr = undefined;
+        const expected = undefined;
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (null)', () => {
+        const arr = null;
+        const expected = undefined;
+        const actual = getHalfRev(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getWeekDay', () => {
+    it('should be return Понедельник (1)', () => {
+        const day = 1;
+        const expected = 'Понедельник';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Воскресенье (7)', () => {
+        const day = 7;
+        const expected = 'Воскресенье';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Неправильное число (8)', () => {
+        const day = 8;
+        const expected = 'Неправильное число';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Неправильное число (undefined)', () => {
+        const day = undefined;
+        const expected = 'Неправильное число';
+        const actual = getWeekDay(day);
 
         assert.deepEqual(actual, expected);
     });

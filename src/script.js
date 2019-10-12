@@ -1,5 +1,3 @@
-//Условные операторы
-
 // Если а – четное посчитать а*б, иначе а+б
 const getProductOrSum = (a, b) => {
     let result = 0;
@@ -87,8 +85,6 @@ const getMark = rate => {
     return result;
 }
 
-//Циклы
-
 // Найти сумму четных чисел и диапазоне от 1 до 99
 const getEvenSum = () => {
     let result = 0;
@@ -119,17 +115,6 @@ const getIsPrime = num => {
     return true;
 }
 
-// Найти корень натурального числа с точностью до целого
-/* const getSquareRoot = num => {
-    let result = 1;
-
-    for (let i = 0; i < i**2 - num; i++) {
-        result = i;
-    }
-
-    return result;
-} */
-
 // Вычислить факториал числа n. n! = 1*2*…*n-1*n;!
 const getFactorial = num => {
     let result = 1;
@@ -157,7 +142,7 @@ const getMirrorNum = num => {
     return result;
 }
 
-// Найти минимальный элемент массива
+// Найти индекс минимального элемента массива
 const getMinIndex = array => {
     let  mainIndex = 0;
     let min = 0;
@@ -174,4 +159,98 @@ const getMinIndex = array => {
     }
 
     return mainIndex;
+}
+
+// Посчитать сумму элементов массива с нечетными индексами
+const getOddSum = array => {
+    let result = 0;
+
+    if (typeof array === 'undefined') {
+        return undefined;
+    }
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] % 2) {
+            result += array[i];
+        }
+    }
+
+    return result;
+}
+
+// Сделать реверс массива (массив в обратном направлении)
+const getRevArr = array => {
+    let result = [];
+
+    if (typeof array === 'undefined' || array === null) {
+        return undefined;
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        result[i] = array[(array.length - i) - 1];
+    }
+
+    return result;
+}
+
+// Поменять местами первую и вторую половину массива
+const getHalfRev = array => {
+    let result = [];
+
+    if (typeof array === 'undefined' || array === null) {
+        return undefined;
+    }
+
+    if (array.length % 2) {
+        return 'Array length is negative'        
+    }
+
+    let arrCenter = array.length / 2;
+    let arrFirstPart = [];
+    let arrSecondPart = [];
+
+    for (i = 0; i < array.length; i++) {
+        if (arrCenter <= i) {
+            arrFirstPart[i - arrCenter] = array[i];
+        } else {
+            arrSecondPart[i] = array[i];
+        }
+    }
+
+    result = arrFirstPart.concat(arrSecondPart);
+
+    return result;
+}
+
+// Получить строковое название дня недели по номеру дня
+const getWeekDay = day => {
+    let result = '';
+
+    switch(day) {
+        case 1:
+            result = 'Понедельник';
+          break;
+        case 2:
+            result = 'Вторник';
+          break;
+        case 3:
+            result = 'Среда';
+          break;
+        case 4:
+            result = 'Четверг';
+          break;
+        case 5:
+            result = 'Пятница';
+          break;
+        case 6:
+            result = 'Суббота';
+          break;
+        case 7:
+            result = 'Воскресенье';
+          break;
+        default:
+            result = 'Неправильное число';
+      }
+      
+    return result;
 }
