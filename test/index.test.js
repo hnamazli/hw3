@@ -352,3 +352,107 @@ describe('getIsPrime', () => {
         assert.deepEqual(actual, expected);
     });
 });
+
+/* describe('getSquareRoot', () => {
+    it('should be return ', () => {
+        const num = 25;
+        const expected = 5;
+        const actual = getSquareRoot(num);
+
+        assert.deepEqual(actual, expected);
+    });
+}); */
+
+describe('getFactorial', () => {
+    it('should be return 120 (5)', () => {
+        const num = 5;
+        const expected = 120;
+        const actual = getFactorial(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 1 (0)', () => {
+        const num = 0;
+        const expected = 1;
+        const actual = getFactorial(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 1 (-1)', () => {
+        const num = -1;
+        const expected = 1;
+        const actual = getFactorial(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 1 (undefined)', () => {
+        const num = undefined;
+        const expected = 1;
+        const actual = getFactorial(num);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getMirrorNum', () => {
+    it('should be return 865 (568)', () => {
+        const num = 568;
+        const expected = 865;
+        const actual = getMirrorNum(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 65 (56)', () => {
+        const num = 56;
+        const expected = 65;
+        const actual = getMirrorNum(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 5', () => {
+        const num = 5;
+        const expected = 5;
+        const actual = getMirrorNum(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 (undefined)', () => {
+        const num = undefined;
+        const expected = 0;
+        const actual = getMirrorNum(num);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('getMinIndex', () => {
+    it('should be return 2 ([5, 9, 54, 2])', () => {
+        const arr = [5, 9, 54, 2];
+        const expected = 3;
+        const actual = getMinIndex(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 ([5, 9, 7, 10])', () => {
+        const arr = [5, 9, 7, 10];
+        const expected = 0;
+        const actual = getMinIndex(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (undefined)', () => {
+        const arr = undefined;
+        const expected = undefined;
+        const actual = getMinIndex(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+});

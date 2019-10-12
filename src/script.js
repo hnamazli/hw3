@@ -103,18 +103,75 @@ const getEvenSum = () => {
 }
 
 // Проверить простое ли число?
-const getIsPrime = number => {
-    if (typeof number === 'undefined') {
+const getIsPrime = num => {
+    if (typeof num === 'undefined') {
         return undefined;
-    } else if (number < 0) {
+    } else if (num < 0) {
         return false;
     }
 
-    for (let i = 0; i < number / 2; i++) {
-        if (number % i) {
+    for (let i = 0; i < num / 2; i++) {
+        if (num % i) {
             return false;
         }
     }
 
     return true;
+}
+
+// Найти корень натурального числа с точностью до целого
+/* const getSquareRoot = num => {
+    let result = 1;
+
+    for (let i = 0; i < i**2 - num; i++) {
+        result = i;
+    }
+
+    return result;
+} */
+
+// Вычислить факториал числа n. n! = 1*2*…*n-1*n;!
+const getFactorial = num => {
+    let result = 1;
+
+    for (let i = 1; i <= num; i++) {
+        result *= i;      
+    }
+
+    return result;
+}
+
+// Вывести число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321
+const getMirrorNum = num => {
+    let result = 0;
+    let tempNum = num;
+    let rem = 0;
+
+    while (tempNum > 0) {
+        rem = tempNum % 10;
+        result += rem;
+        tempNum = (tempNum - rem) / 10;
+        tempNum && (result *= 10);
+    }
+
+    return result;
+}
+
+// Найти минимальный элемент массива
+const getMinIndex = array => {
+    let  mainIndex = 0;
+    let min = 0;
+
+    if (typeof array === 'undefined') {
+        return undefined;        
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < array[min]) {
+            min = array[i];
+            mainIndex = i;            
+        }
+    }
+
+    return mainIndex;
 }
