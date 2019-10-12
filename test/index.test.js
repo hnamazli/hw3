@@ -1,35 +1,156 @@
-describe('Sum', () => {
-    it('Return 7', () => {
-        assert .equal(getSum(5, 2), 7);
-    });
-})
+describe('getProductOrSum', () => {
+    it('should be return 10 (5, 2)', () => {
+        const a = 5;
+        const b = 2;
+        const expected = 10;
 
-describe('Coordinate position', () => {
-    it('Return 1', () => {
-        assert .equal(getPos(5, 2), 1);
-    });
+        const actual = getProductOrSum(a, b);
 
-    it('Return 2', () => {
-        assert .equal(getPos(5, -2), 2);
+        assert.deepEqual(actual, expected);
     });
 
-    it('Return 3', () => {
-        assert .equal(getPos(-5, -2), 3);
+    it('should be return 6 (4, 2)', () => {
+        const a = 4;
+        const b = 2;
+        const expected = 6;
+
+        const actual = getProductOrSum(a, b);
+
+        assert.deepEqual(actual, expected);
     });
 
-    it('Return 4', () => {
-        assert .equal(getPos(-5, 2), 4);
+    it('should be return 0 (undefined, undefined)', () => {
+        const a = undefined;
+        const b = undefined;
+        const expected = 0;
+
+        const actual = getProductOrSum(a, b);
+
+        assert.deepEqual(actual, expected);
     });
 
-    it('x = 0', () => {
-        assert .equal(getPos(5, 0), 0);
+    it('should be return 0 (NaN, 2)', () => {
+        const a = NaN;
+        const b = 2;
+        const expected = 0;
+
+        const actual = getProductOrSum(a, b);
+
+        assert.deepEqual(actual, expected);
     });
 
-    it('y = 0', () => {
-        assert .equal(getPos(5, 0), 0);
+    it('should be return 2 (0, 2)', () => {
+        const a = 0;
+        const b = 2;
+        const expected = 2;
+
+        const actual = getProductOrSum(a, b);
+
+        assert.deepEqual(actual, expected);
     });
 
-    it('Coordinate position is 0', () => {
-        assert .equal(getPos(0, 0), 0);
+    it('should be return 0 (2, 0)', () => {
+        const a = 2;
+        const b = 0;
+        const expected = 0;
+
+        const actual = getProductOrSum(a, b);
+
+        assert.deepEqual(actual, expected);
     });
-})
+});
+
+describe('getQuarter', () => {
+    it('should be return 1st (2, 4)', () => {
+        const x = 2;
+        const y = 4;
+        const expected = '1st';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 2nd (2, -4)', () => {
+        const x = 2;
+        const y = -4;
+        const expected = '2nd';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 3rd (-2, -4)', () => {
+        const x = -2;
+        const y = -4;
+        const expected = '3rd';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 4th (-2, 4)', () => {
+        const x = -2;
+        const y = 4;
+        const expected = '4th';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return X-axis (0, 4)', () => {
+        const x = 0;
+        const y = 4;
+        const expected = 'X-axis';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Y-axis (4, 0)', () => {
+        const x = 4;
+        const y = 0;
+        const expected = 'Y-axis';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Frame origin (0, 0)', () => {
+        const x = 0;
+        const y = 0;
+        const expected = 'Frame origin';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (undefined, undefined)', () => {
+        const x = undefined;
+        const y = undefined;
+        const expected = '';
+
+        const actual = getQuarter(x, y);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('', () => {
+    it('should be return ', () => {
+        const a = 0;
+        const b = 0;
+        const c = 0;
+        //const expected = ;
+
+        const actual = (a, b, c);
+
+        //assert.deepEqual(actual, expected);
+    });
+});
