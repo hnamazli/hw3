@@ -142,15 +142,59 @@ describe('getQuarter', () => {
     });
 });
 
-describe('', () => {
-    it('should be return ', () => {
+describe('getSumPositive', () => {
+    it('should be return 14 (5, 7, 2)', () => {
+        const a = 5;
+        const b = 7;
+        const c = 2;
+        const expected = 14;
+
+        const actual = getSumPositive(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 9 (0, 7, 2)', () => {
+        const a = 0;
+        const b = 7;
+        const c = 2;
+        const expected = 9;
+
+        const actual = getSumPositive(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 2 (0, 0, 2)', () => {
         const a = 0;
         const b = 0;
-        const c = 0;
-        //const expected = ;
+        const c = 2;
+        const expected = 2;
 
-        const actual = (a, b, c);
+        const actual = getSumPositive(a, b, c);
 
-        //assert.deepEqual(actual, expected);
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 (undefined, undefined, undefined)', () => {
+        const a = undefined;
+        const b = undefined;
+        const c = undefined;
+        const expected = 0;
+
+        const actual = getSumPositive(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 (NaN, 5, 1)', () => {
+        const a = NaN;
+        const b = 5;
+        const c = 1;
+        const expected = 0;
+
+        const actual = getSumPositive(a, b, c);
+
+        assert.deepEqual(actual, expected);
     });
 });

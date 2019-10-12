@@ -39,3 +39,12 @@ const getQuarter = (x, y) => {
 }
 
 // Найти сумму только положительных из трех чисел
+const getSumPositive = (a, b, c) => {
+    result = 0;
+
+    if (a >= 0 && b >= 0 && c >= 0) {
+        result = a + b + c;
+    }
+
+    return result;
+}
