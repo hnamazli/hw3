@@ -244,3 +244,60 @@ describe('getMax', () => {
         assert.deepEqual(actual, expected);
     });
 });
+
+describe('getMark', () => {
+    it('should be return A (91)', () => {
+        const rate = 91;
+        const expected = 'A';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return F (1)', () => {
+        const rate = 1;
+        const expected = 'F';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return C (74)', () => {
+        const rate = 74;
+        const expected = 'C';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (-1)', () => {
+        const rate = -1;
+        const expected = '';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return empty line (101)', () => {
+        const rate = 101;
+        const expected = '';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+
+    it('should be return empty line (undefined)', () => {
+        const rate = undefined;
+        const expected = '';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+});

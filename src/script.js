@@ -63,3 +63,26 @@ const getMax = (a, b, c) => {
 
     return result;
 }
+
+//Написать программу определения оценки студента по его рейтингу
+const getMark = rate => {
+    let result = '';
+
+    if (rate  < 0 || rate > 100) {
+        return result;
+    } else if (rate >= 0 && rate < 20) {
+        result = 'F';
+    } else if (rate < 40) {
+        result = 'E';
+    } else if (rate < 60) {
+        result = 'D';
+    } else if (rate < 75) {
+        result = 'C';
+    } else if (rate < 90) {
+        result = 'B';
+    } else if (rate <= 100) {
+        result = 'A';
+    }
+
+    return result;
+}
