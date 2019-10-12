@@ -198,3 +198,49 @@ describe('getSumPositive', () => {
         assert.deepEqual(actual, expected);
     });
 });
+
+describe('getMax', () => {
+    it('should be return 73 (5, 7, 2)', () => {
+        const a = 5;
+        const b = 7;
+        const c = 2;
+        const expected = 73;
+
+        const actual = getMax(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 9 (1, 3, 2)', () => {
+        const a = 1;
+        const b = 3;
+        const c = 2;
+        const expected = 9;
+
+        const actual = getMax(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 14 (0, 9, 2)', () => {
+        const a = 0;
+        const b = 9;
+        const c = 2;
+        const expected = 14;
+
+        const actual = getMax(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 0 (undefined, undefined, undefined)', () => {
+        const a = undefined;
+        const b = undefined;
+        const c = undefined;
+        const expected = 0;
+
+        const actual = getMax(a, b, c);
+
+        assert.deepEqual(actual, expected);
+    });
+});

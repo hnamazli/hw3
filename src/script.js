@@ -15,7 +15,7 @@ const getProductOrSum = (a, b) => {
 
 // Определить какой четверти принадлежит точка с координатами (х, у)
 const getQuarter = (x, y) => {
-    result = '';
+    let result = '';
 
     if (typeof x === 'undefined' || typeof y === 'undefined') {
         return result;
@@ -40,11 +40,26 @@ const getQuarter = (x, y) => {
 
 // Найти сумму только положительных из трех чисел
 const getSumPositive = (a, b, c) => {
-    result = 0;
+    let result = 0;
 
     if (a >= 0 && b >= 0 && c >= 0) {
         result = a + b + c;
     }
+
+    return result;
+}
+
+// Посчитать выражение макс(а * б * с, а + б + с) + 3
+const getMax = (a, b, c) => {
+    let result = 0;
+    let sum = a + b + c;
+    let mult = a * b * c;
+
+    if ((typeof a || typeof b || typeof c) === 'undefined') {
+        return result;
+    }
+
+    sum >= mult ? result = sum + 3 : result = mult + 3; 
 
     return result;
 }
