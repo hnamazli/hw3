@@ -21,8 +21,12 @@ describe('Coordinate position', () => {
         assert .equal(getPos(-5, 2), 4);
     });
 
+    it('x = 0', () => {
+        assert .equal(getPos(5, 0), 0);
+    });
+
     it('y = 0', () => {
-        assert .equal(getPos(5, 0), 1);
+        assert .equal(getPos(5, 0), 0);
     });
 
     it('Coordinate position is 0', () => {
