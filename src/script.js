@@ -64,7 +64,7 @@ const getMax = (a, b, c) => {
     return result;
 }
 
-//Написать программу определения оценки студента по его рейтингу
+// Написать программу определения оценки студента по его рейтингу
 const getMark = rate => {
     let result = '';
 
@@ -82,6 +82,21 @@ const getMark = rate => {
         result = 'B';
     } else if (rate <= 100) {
         result = 'A';
+    }
+
+    return result;
+}
+
+//Циклы
+
+// Найти сумму четных чисел и диапазоне от 1 до 99
+const getEvenSum = () => {
+    let result = 0;
+    
+    for (let i = 0; i < 99; i++) {
+        if (!(i % 2)) {
+            result += i;
+        }        
     }
 
     return result;

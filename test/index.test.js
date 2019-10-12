@@ -301,3 +301,12 @@ describe('getMark', () => {
         assert.deepEqual(actual, expected);
     });
 });
+
+describe('getEvenSum', () => {
+    it('should be return 2450', () => {
+        const expected = 2450;
+        const actual = getEvenSum();
+
+        assert.deepEqual(actual, expected);
+    });
+});
