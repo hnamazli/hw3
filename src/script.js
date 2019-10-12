@@ -101,3 +101,20 @@ const getEvenSum = () => {
 
     return result;
 }
+
+// Проверить простое ли число?
+const getIsPrime = number => {
+    if (typeof number === 'undefined') {
+        return undefined;
+    } else if (number < 0) {
+        return false;
+    }
+
+    for (let i = 0; i < number / 2; i++) {
+        if (number % i) {
+            return false;
+        }
+    }
+
+    return true;
+}

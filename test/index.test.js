@@ -310,3 +310,45 @@ describe('getEvenSum', () => {
         assert.deepEqual(actual, expected);
     });
 });
+
+describe('getIsPrime', () => {
+    it('should be return true (2)', () => {
+        const num = 2;
+        const expected = true;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return true (3)', () => {
+        const num = 3;
+        const expected = true;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return false (8)', () => {
+        const num = 8;
+        const expected = false;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return false (-1)', () => {
+        const num = -1;
+        const expected = false;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return undefined (undefined)', () => {
+        const num = undefined;
+        const expected = undefined;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+});
