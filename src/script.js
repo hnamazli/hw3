@@ -2,7 +2,7 @@
 const getProductOrSum = (a, b) => {
     let result = 0;
 
-    if ((!a && a != 0) || (!b && !b != 0)) {
+    if ((!a && a !== 0) || (!b && !b !== 0)) {
         return result;
     }
 
@@ -40,7 +40,7 @@ const getQuarter = (x, y) => {
 const getSumPositive = (a, b, c) => {
     let result = 0;
 
-    if (a >= 0 && b >= 0 && c >= 0) {
+    if (a >= 0 || b >= 0 || c >= 0) {
         result = a + b + c;
     }
 
@@ -57,7 +57,7 @@ const getMax = (a, b, c) => {
         return result;
     }
 
-    sum >= mult ? result = sum + 3 : result = mult + 3; 
+    result = sum >= mult ? sum + 3 : mult + 3;
 
     return result;
 }
@@ -100,24 +100,26 @@ const getEvenSum = () => {
 
 // Проверить простое ли число?
 const getIsPrime = num => {
-    if (typeof num === 'undefined') {
-        return undefined;
-    } else if (num < 0) {
+    if (num < 0 || typeof num === 'undefined') {
         return false;
     }
 
-    for (let i = 0; i < num / 2; i++) {
-        if (num % i) {
-            return false;
+    for (let i = 1; i < num / 2; i++) {
+        if (!(num % i)) {
+            return true;
         }
     }
 
-    return true;
+    return false;
 }
 
 // Вычислить факториал числа n. n! = 1*2*…*n-1*n;!
 const getFactorial = num => {
     let result = 1;
+
+    if (!num) {
+        return 0;
+    }
 
     for (let i = 1; i <= num; i++) {
         result *= i;      
@@ -144,7 +146,7 @@ const getMirrorNum = num => {
 
 // Найти индекс минимального элемента массива
 const getMinIndex = array => {
-    let  mainIndex = 0;
+    let  minIndex = 0;
     let min = 0;
 
     if (typeof array === 'undefined') {
@@ -154,15 +156,15 @@ const getMinIndex = array => {
     for (let i = 0; i < array.length; i++) {
         if (array[i] < array[min]) {
             min = array[i];
-            mainIndex = i;            
+            minIndex = i;            
         }
     }
 
-    return mainIndex;
+    return minIndex;
 }
 
 // Посчитать сумму элементов массива с нечетными индексами
-const getOddSum = array => {
+const getIndexOddSum = array => {
     let result = 0;
 
     if (typeof array === 'undefined') {
@@ -170,7 +172,7 @@ const getOddSum = array => {
     }
 
     for (i = 0; i < array.length; i++) {
-        if (array[i] % 2) {
+        if (i % 2) {
             result += array[i];
         }
     }
@@ -182,12 +184,12 @@ const getOddSum = array => {
 const getRevArr = array => {
     let result = [];
 
-    if (typeof array === 'undefined' || array === null) {
+    if (!array) {
         return undefined;
     }
 
-    for (let i = 0; i < array.length; i++) {
-        result[i] = array[(array.length - i) - 1];
+    for (let i = array.length - 1; i >= 0; i--) {
+        result[result.length] = array[i];
     }
 
     return result;
@@ -197,7 +199,7 @@ const getRevArr = array => {
 const getHalfRev = array => {
     let result = [];
 
-    if (typeof array === 'undefined' || array === null) {
+    if (!array) {
         return undefined;
     }
 
@@ -249,7 +251,7 @@ const getWeekDay = day => {
             result = 'Воскресенье';
           break;
         default:
-            result = 'Неправильное число';
+            result = '';
       }
       
     return result;

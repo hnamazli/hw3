@@ -255,9 +255,9 @@ describe('getMark', () => {
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return F (1)', () => {
-        const rate = 1;
-        const expected = 'F';
+    it('should be return B (81)', () => {
+        const rate = 81;
+        const expected = 'B';
 
         const actual = getMark(rate);
 
@@ -267,6 +267,33 @@ describe('getMark', () => {
     it('should be return C (74)', () => {
         const rate = 74;
         const expected = 'C';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return D (51)', () => {
+        const rate = 51;
+        const expected = 'D';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return E (31)', () => {
+        const rate = 31;
+        const expected = 'E';
+
+        const actual = getMark(rate);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return F (1)', () => {
+        const rate = 1;
+        const expected = 'F';
 
         const actual = getMark(rate);
 
@@ -328,6 +355,22 @@ describe('getIsPrime', () => {
         assert.deepEqual(actual, expected);
     });
 
+    it('should be return false (4)', () => {
+        const num = 4;
+        const expected = false;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return true (5)', () => {
+        const num = 5;
+        const expected = true;
+        const actual = getIsPrime(num);
+
+        assert.deepEqual(actual, expected);
+    });
+
     it('should be return false (8)', () => {
         const num = 8;
         const expected = false;
@@ -344,9 +387,9 @@ describe('getIsPrime', () => {
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return undefined (undefined)', () => {
+    it('should be return false (undefined)', () => {
         const num = undefined;
-        const expected = undefined;
+        const expected = false;
         const actual = getIsPrime(num);
 
         assert.deepEqual(actual, expected);
@@ -362,9 +405,9 @@ describe('getFactorial', () => {
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return 1 (0)', () => {
+    it('should be return 0 (0)', () => {
         const num = 0;
-        const expected = 1;
+        const expected = 0;
         const actual = getFactorial(num);
 
         assert.deepEqual(actual, expected);
@@ -378,9 +421,9 @@ describe('getFactorial', () => {
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return 1 (undefined)', () => {
+    it('should be return 0 (undefined)', () => {
         const num = undefined;
-        const expected = 1;
+        const expected = 0;
         const actual = getFactorial(num);
 
         assert.deepEqual(actual, expected);
@@ -447,27 +490,27 @@ describe('getMinIndex', () => {
     });
 });
 
-describe('getOddSum', () => {
-    it('should be return 14 ([5, 9, 54, 2])', () => {
+describe('getIndexOddSum', () => {
+    it('should be return 11 ([5, 9, 54, 2])', () => {
         const arr = [5, 9, 54, 2];
+        const expected = 11;
+        const actual = getIndexOddSum(arr);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return 14 ([8, 12, 54, 2, 1])', () => {
+        const arr = [8, 12, 54, 2, 1];
         const expected = 14;
-        const actual = getOddSum(arr);
+        const actual = getIndexOddSum(arr);
 
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return 0 ([8, 12, 54, 2])', () => {
-        const arr = [8, 12, 54, 2];
-        const expected = 0;
-        const actual = getOddSum(arr);
-
-        assert.deepEqual(actual, expected);
-    });
-
-    it('should be return 7 ([7, 12, 24, 2])', () => {
-        const arr = [7, 12, 24, 2];
-        const expected = 7;
-        const actual = getOddSum(arr);
+    it('should be return 24 ([12, 7, 24, 2, 6, 15])', () => {
+        const arr = [12, 7, 24, 2, 6, 15];
+        const expected = 24;
+        const actual = getIndexOddSum(arr);
 
         assert.deepEqual(actual, expected);
     });
@@ -475,7 +518,7 @@ describe('getOddSum', () => {
     it('should be return undefined (undefined)', () => {
         const arr = undefined;
         const expected = undefined;
-        const actual = getOddSum(arr);
+        const actual = getIndexOddSum(arr);
 
         assert.deepEqual(actual, expected);
     });
@@ -590,6 +633,46 @@ describe('getWeekDay', () => {
         assert.deepEqual(actual, expected);
     });
 
+    it('should be return Вторник (2)', () => {
+        const day = 2;
+        const expected = 'Вторник';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Среда (3)', () => {
+        const day = 3;
+        const expected = 'Среда';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Четверг (4)', () => {
+        const day = 4;
+        const expected = 'Четверг';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Пятница (5)', () => {
+        const day = 5;
+        const expected = 'Пятница';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
+    it('should be return Суббота (6)', () => {
+        const day = 6;
+        const expected = 'Суббота';
+        const actual = getWeekDay(day);
+
+        assert.deepEqual(actual, expected);
+    });
+
     it('should be return Воскресенье (7)', () => {
         const day = 7;
         const expected = 'Воскресенье';
@@ -598,17 +681,17 @@ describe('getWeekDay', () => {
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return Неправильное число (8)', () => {
+    it('should be return "" (8)', () => {
         const day = 8;
-        const expected = 'Неправильное число';
+        const expected = '';
         const actual = getWeekDay(day);
 
         assert.deepEqual(actual, expected);
     });
 
-    it('should be return Неправильное число (undefined)', () => {
+    it('should be return "" (undefined)', () => {
         const day = undefined;
-        const expected = 'Неправильное число';
+        const expected = '';
         const actual = getWeekDay(day);
 
         assert.deepEqual(actual, expected);
